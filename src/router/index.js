@@ -1,3 +1,4 @@
+import LoginView from '../views/LoginView.vue';
 import PasswordSuccess from '../views/PasswordSuccess.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 // Remove the default import for HomeView if it exists
