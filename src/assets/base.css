@@ -1,0 +1,45 @@
+html {
+  height: 100%; /* Crucial */
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Makes box-sizing easier */
+  position: relative; /* Can be helpful, might be default */
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, /* ... other fonts ... */ sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black; /* Make sure you have your desired text color */
+
+  /* --- Background Image Rules --- */
+  /* background-color: #f8f9fa; */ /* Removed or commented out */
+
+  /* Point to the image file in your assets folder */
+  /* The path is relative to the location of base.css */
+  background-image: url('/src/assets/background-pattern.png');
+
+  /* Control how the image repeats */
+  background-repeat: repeat; /* 'repeat' tiles the image (good for patterns) */
+                             /* Other options: 'no-repeat', 'repeat-x', 'repeat-y' */
+
+  /* Optional: Control image size - often 'auto' (default) is fine for patterns */
+  /* background-size: auto; */ /* Or 'cover', 'contain', '50px 50px' etc. */
+
+  /* Optional: Control starting position */
+  /* background-position: top left; */ /* Or 'center center', '50% 50%' etc. */
+
+  /* Optional: Control if background scrolls with content */
+  /* background-attachment: scroll; */ /* Or 'fixed' */
+  /* --- End Background Image Rules --- */
+}

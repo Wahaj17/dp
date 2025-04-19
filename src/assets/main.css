@@ -1,0 +1,38 @@
+@import './base.css';
+
+#app {
+  /* max-width: 1280px; /* This is optional, keep if you like */
+  /* margin: 0 auto; /* Needed if using max-width */
+
+  /* --- Ensure these lines are present --- */
+  min-height: 100%; /* Use min-height from base.css or ensure it's here */
+  display: flex;
+  flex-direction: column;
+  /* If you want vertical centering (optional for this screen): */
+  /* justify-content: center; */
+  /* align-items: center; /* May not be needed if component centers itself */
+  /* --- End of essential lines --- */
+
+  /* padding: 2rem; /* Keep or adjust padding as desired */
+  font-weight: normal;
+  background-color: transparent; /* Keep default */
+
+  /* Background color should ideally be in html/body from base.css,
+     but can be set here if needed */
+  /* background-color: #f8f9fa; */
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
