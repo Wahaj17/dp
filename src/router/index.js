@@ -1,3 +1,4 @@
+import PasswordSuccess from '../views/PasswordSuccess.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 // Remove the default import for HomeView if it exists
 // import HomeView from '../views/HomeView.vue'
@@ -13,6 +14,19 @@ const router = createRouter({
       path: '/',
       name: 'create-password', // Give it a name (optional but good practice)
       component: CreatePassword // Tell it which component to load
+    },
+    {
+      path: '/password-success',
+      name: 'password-success',
+      component: PasswordSuccess
+    },
+    {
+      path: '/login',
+      name: 'login',
+      // For now, just reuse PasswordSuccess component as a placeholder
+      // Later, you'll create a real LoginView component here
+      component: () => import('../views/LoginView.vue') // Assuming you'll create LoginView.vue
+      // OR temporary placeholder: component: PasswordSuccess
     },
     // 3. You can keep, modify, or remove other routes like '/about'
     //    Let's remove it for now to keep things simple.

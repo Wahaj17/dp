@@ -96,13 +96,16 @@ export default {
       // For now, just print the values to the browser's developer console.
       // This is useful for checking things during development.
       // Later, this is where you would send the password to your server.
-      console.log('Password creation attempt:');
-      console.log('Email:', 'humanrosie@deliverypartner.com'); // The email is fixed here
+      // Simulate successful password setting
+      console.log('Password successfully validated (simulation).');
+      console.log('Email:', 'humanrosie@deliverypartner.com');
       console.log('Password:', this.password);
-      console.log('Confirmed Password:', this.confirmPassword);
 
-      // Add actual password setting logic here (e.g., API call)
-      alert('Password setting simulated! Check the console (F12).');
+  // Remove previous alert if any
+  // alert('Password setting simulated! Check the console (F12).');
+
+  // *** Add navigation to the success screen ***
+      this.$router.push('/password-success');
     },
     toggleCreatePasswordVisibility() {
       this.isCreatePasswordVisible = !this.isCreatePasswordVisible;
