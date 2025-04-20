@@ -16,9 +16,7 @@
         </button>
 
         <div
-         class="notification-wrapper"
-         @mouseleave="closeNotificationsMenu"
-         @mouseenter="cancelCloseNotificationsMenu">
+         class="notification-wrapper">
         </div>
 
         <button class="icon-button notification" @click="toggleNotifications">
@@ -29,7 +27,7 @@
           <span class="notification-badge">11</span>
         </button>
 
-        <NotificationsMenu v-if="isNotificationsOpen" class="notifications-menu-position" />
+        <NotificationsMenu ref="menuRef" v-if="isNotificationsOpen" class="notifications-menu-position" />
       </div>
     </header>
 
@@ -227,26 +225,24 @@
 
 <script setup>
 import NotificationsMenu from '../components/NotificationsMenu.vue';
+import { onClickOutside } from '@vueuse/core';
 import { ref } from 'vue';
 
+const buttonRef = ref(null); // Ref for the notification button
+const menuRef = ref(null); // Ref for the NotificationsMenu component/element
+
 const isNotificationsOpen = ref(false);
-let closeTimeout = null; // Variable to hold timeout ID
 
 const toggleNotifications = () => {
   isNotificationsOpen.value = !isNotificationsOpen.value;
 };
 
-const closeNotificationsMenu = () => {
-  // Use a small delay to allow moving mouse onto menu
-  closeTimeout = setTimeout(() => {
-    isNotificationsOpen.value = false;
-  }, 300); // 300ms delay
+// This function will be called by onClickOutside to close the menu
+const closeMenu = () => {
+  isNotificationsOpen.value = false;
 };
-
-const cancelCloseNotificationsMenu = () => {
-  // Clear the timeout if mouse enters the menu or button again
-  clearTimeout(closeTimeout);
-};
+// Setup onClickOutside: Watch clicks outside 'menuRef', ignore clicks on 'buttonRef', call 'closeMenu'
+onClickOutside(menuRef, closeMenu, { ignore: [buttonRef] });
 
 const tasks = ref([
   {
