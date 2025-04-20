@@ -56,7 +56,7 @@
 
 <script>
 import IconEye from '@/components/IconEye.vue';
-import IconEyeSlash from '@/components/IconEyeSlash.vue'
+import IconEyeSlash from '@/components/IconEyeSlash.vue';
 import IconLock from '@/components/IconLock.vue'; // Import Lock Icon
 import IconMail from '@/components/IconMail.vue'; // Import Mail Icon
 // Step 2: Add Basic Interactivity (The 'Brain' of the component)

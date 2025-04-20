@@ -8,7 +8,7 @@
 /* Style the root element Vue mounts to (usually in index.html) */
 /* Using :global() because #app is outside this component's scope */
 :global(#app) {
-  max-width: 1280px; /* Optional: Set a max width for the whole app */
+  /* max-width: 1280px; Optional: Set a max width for the whole app */
   margin: 0 auto; /* Center the app container horizontally */
   padding: 2rem; /* Add some padding around the app */
   font-weight: normal;

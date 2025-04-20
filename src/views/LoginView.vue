@@ -1,4 +1,3 @@
-Code snippet
 <template>
   <div class="login-container">
     <img src="@/assets/mubadala-logo.png" alt="Mubadala Logo" class="logo">
@@ -36,6 +35,7 @@ export default {
 
       // Example (conceptual - do not use directly without SSO setup):
       // window.location.href = 'YOUR_SSO_PROVIDER_LOGIN_URL';
+      this.$router.push('/outsource'); // Add this line
     }
   }
 };

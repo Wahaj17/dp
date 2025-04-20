@@ -5,7 +5,8 @@
   /* margin: 0 auto; /* Needed if using max-width */
 
   /* --- Ensure these lines are present --- */
-  min-height: 100%; /* Use min-height from base.css or ensure it's here */
+  padding: 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   /* If you want vertical centering (optional for this screen): */
@@ -14,8 +15,8 @@
   /* --- End of essential lines --- */
 
   /* padding: 2rem; /* Keep or adjust padding as desired */
-  font-weight: normal;
-  background-color: transparent; /* Keep default */
+  /* font-weight: normal; */
+  /* background-color transparent; */
 
   /* Background color should ideally be in html/body from base.css,
      but can be set here if needed */
