@@ -1,6 +1,6 @@
-import DashboardView from '../views/DashboardView.vue';
+// import DashboardView from '../views/DashboardView.vue';
 import OutsourceScreenView from '../views/OutsourceScreenView.vue';
-import LoginView from '../views/LoginView.vue';
+// import LoginView from '../views/LoginView.vue';
 import PasswordSuccess from '../views/PasswordSuccess.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 // Remove the default import for HomeView if it exists
@@ -31,11 +31,11 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue') // Assuming you'll create LoginView.vue
       // OR temporary placeholder: component: PasswordSuccess
     },
-    {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: DashboardView
-    },
+    // {
+    //   path: '/dashboard',
+    //   name: 'dashboard',
+    //   component: DashboardView
+    // },
     {
       path: '/outsource', // The URL path for this screen
       name: 'outsource-screen', // A unique name for the route

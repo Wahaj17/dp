@@ -9,11 +9,12 @@
 /* Using :global() because #app is outside this component's scope */
 :global(#app) {
   /* max-width: 1280px; Optional: Set a max width for the whole app */
+
   margin: 0 auto; /* Center the app container horizontally */
-  padding: 2rem; /* Add some padding around the app */
+  /* padding: 2rem; Add some padding around the app */
   font-weight: normal;
 
-  min-height: 100vh; /* Ensure app container takes at least full viewport height */
+  min-height: 100vh;
   display: flex; /* Use flexbox for centering content */
   flex-direction: column;
   justify-content: center; /* Center content vertically */

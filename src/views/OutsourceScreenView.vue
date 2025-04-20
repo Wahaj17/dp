@@ -8,18 +8,28 @@
         <img src="@/assets/side-logo-mubadala.png" alt="Mubadala Side Logo" class="logo" />
       </div>
       <div class="header-icons">
+
         <button class="icon-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon message-icon">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </button>
-        <button class="icon-button notification">
+
+        <div
+         class="notification-wrapper"
+         @mouseleave="closeNotificationsMenu"
+         @mouseenter="cancelCloseNotificationsMenu">
+        </div>
+
+        <button class="icon-button notification" @click="toggleNotifications">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-          <span class="notification-badge">2</span>
+          <span class="notification-badge">11</span>
         </button>
+
+        <NotificationsMenu v-if="isNotificationsOpen" class="notifications-menu-position" />
       </div>
     </header>
 
@@ -216,7 +226,27 @@
 </template>
 
 <script setup>
+import NotificationsMenu from '../components/NotificationsMenu.vue';
 import { ref } from 'vue';
+
+const isNotificationsOpen = ref(false);
+let closeTimeout = null; // Variable to hold timeout ID
+
+const toggleNotifications = () => {
+  isNotificationsOpen.value = !isNotificationsOpen.value;
+};
+
+const closeNotificationsMenu = () => {
+  // Use a small delay to allow moving mouse onto menu
+  closeTimeout = setTimeout(() => {
+    isNotificationsOpen.value = false;
+  }, 300); // 300ms delay
+};
+
+const cancelCloseNotificationsMenu = () => {
+  // Clear the timeout if mouse enters the menu or button again
+  clearTimeout(closeTimeout);
+};
 
 const tasks = ref([
   {
@@ -731,4 +761,17 @@ const getStatusClass = (status) => {
 .chat-icon {
   color: white;
 }
+
+.notification-wrapper {
+  position: relative; /* Establishes positioning context for the menu */
+}
+
+.notifications-menu-position {
+  position: absolute;
+  top: 100%; /* Position below the wrapper */
+  right: 0;  /* Align to the right edge of the wrapper */
+  margin-top: 12px; /* Space between button and menu */
+  z-index: 1000; /* Ensure menu is on top */
+}
+
 </style>
