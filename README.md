@@ -34,11 +34,9 @@ npm run build
 npm run lint
 ```
 
-<!-- 
-    Pending: Future Work 
+Pending: Future Work 
     - Seperate styling, Views, dummy data to improve codebase as per standards
     - implement non-functiuonal buttons
     - Improve styling
     - Add views/pages for settings, task details
     - Add chat module
--->
