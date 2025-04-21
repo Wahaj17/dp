@@ -24,7 +24,7 @@
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-          <span class="notification-badge">11</span>
+          <span class="notification-badge">20</span>
         </button>
 
         <NotificationsMenu ref="menuRef" v-if="isNotificationsOpen" class="notifications-menu-position" />
@@ -71,10 +71,10 @@
               </div>
               <div class="sidebar-item">
                 <div class="icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
                   </svg>
                 </div>
               </div>
@@ -95,7 +95,7 @@
       <div class="content">
         <!-- Welcome Section -->
         <div class="welcome-card">
-          <h2 class="welcome-text">Hey, <span class="welcome-highlight">Welcome!</span></h2>
+          <h2 class="welcome-text">Hey, <span class="welcome-highlight">Welcome, Wahaj!</span></h2>
         </div>
 
         <!-- Tasks Section -->
@@ -362,6 +362,13 @@ const getStatusClass = (status) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px; /* Add some padding */
+  border-radius: 50%; /* Make hover effect round */
+  transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+   background-color: #f0f0f0; /* ADD subtle background on hover */
 }
 
 .notification {
@@ -436,10 +443,15 @@ const getStatusClass = (status) => {
   justify-content: center;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .sidebar-item.active {
   background-color: #0a3d62;
+}
+
+.sidebar-item:not(.active):hover {
+    background-color: #f5f5f5; /* Add hover state if missing */
 }
 
 .sidebar-item.active .icon {
@@ -511,6 +523,12 @@ const getStatusClass = (status) => {
   font-weight: 700;
 }
 
+.sidebar-item.logout-item {
+    margin-top: auto; /* Push this item towards the bottom */
+    /* Add some space above the powered-by section if needed */
+    margin-bottom: 15px;
+}
+
 /* Tasks Section Styles */
 .tasks-section {
   background-color: white;
@@ -571,6 +589,11 @@ const getStatusClass = (status) => {
   justify-content: center;
   padding: 8px;
   border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #f0f0f0; /* Existing hover style */
 }
 
 .filter-icon {
@@ -702,6 +725,15 @@ const getStatusClass = (status) => {
   border: none;
   cursor: pointer;
   color: #666;
+  padding: 2px; /* Add padding if needed */
+  border-radius: 4px; /* Optional */
+  opacity: 0.7; /* Make slightly transparent normally */
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.action-button:hover {
+   opacity: 1; /* Fully opaque on hover */
+   background-color: #f0f0f0; /* Optional subtle background */
 }
 
 .action-icon {
@@ -729,6 +761,12 @@ const getStatusClass = (status) => {
   cursor: pointer;
   font-size: 14px;
   color: #666;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination-arrow:hover, .pagination-number:not(.active):hover {
+   background-color: #f0f0f0; /* Add hover style if missing */
+   border-color: #bbb; /* Optional: darken border slightly */
 }
 
 .pagination-number.active {
@@ -752,6 +790,12 @@ const getStatusClass = (status) => {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.chat-button:hover {
+  background-color: #07304f; /* Darker shade of the blue */
+  transform: scale(1.05); /* Optional: slight scale effect */
 }
 
 .chat-icon {

@@ -1,3 +1,5 @@
+<!-- Not using this rn -->
+
 <template>
   <div class="dashboard-layout">
     <header class="app-header">
@@ -93,7 +95,6 @@ import IconChevronRight from '@/components/IconChevronRight.vue';
 
 export default {
   name: 'DashboardView',
-  // We will add data and methods later
   components: {
     IconEye,
     IconUser,
@@ -108,9 +109,9 @@ export default {
   },
 
   data() {
-    // This function holds the component's local data
+
     return {
-      // Sample task data array (replace with real data later)
+
       tasks: [
         { candidate: 'Human Rossi', jrNumber: 'JR-2024-001', projectCode: 'IT-1007', createdAt: '24/10/2024', details: 'Developing secure and scalable RESTful APIs in...', status: 'Requested', id: 1 },
         { candidate: 'Hammad Siddiqui', jrNumber: 'JR-2024-001', projectCode: 'IT-1007', createdAt: '24/10/2024', details: 'Developing secure and scalable RESTful APIs in...', status: 'In Progress', id: 2 },
@@ -125,13 +126,7 @@ export default {
   },
   methods: {
     getStatusClass(status) {
-      // Convert status text to a CSS-friendly class name
-      // e.g., "In Progress" becomes "status-inprogress"
-      // e.g., "On Hold" becomes "status-onhold"
-      // const statusClass = status.toLowerCase().replace(/\s+/g, '-');
-      // return `status-${statusClass}`;
 
-      // Alternatively, use a more explicit mapping:
 
       switch (status.toLowerCase()) {
         case 'requested': return 'status-requested';
@@ -158,7 +153,6 @@ export default {
   overflow: hidden; /* Prevent scrolling issues from nested elements */
 }
 
-/* --- Header Styling --- */
 .app-header {
   display: flex;
   justify-content: space-between; /* Logo left, Actions right */
@@ -175,18 +169,16 @@ export default {
   margin-bottom: 0; /* Remove margin if applied previously */
 }
 .header-actions {
-  /* Placeholder styling */
+
   color: #aaa;
 }
 
-/* --- Content Wrapper (Sidebar + Main) --- */
 .content-wrapper {
   display: flex; /* Arrange sidebar and main content side-by-side */
   flex-grow: 1; /* Allow this area to grow and fill remaining vertical space */
   overflow: hidden; /* Prevent unwanted scrollbars on the wrapper */
 }
 
-/* --- Sidebar Styling --- */
 .app-sidebar {
   width: 70px; /* Width of the collapsed sidebar */
   background-color: #fff; /* White sidebar */
@@ -197,20 +189,18 @@ export default {
   flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 .sidebar-nav {
-  flex-grow: 1; /* Allow nav items to take up available space */
+  flex-grow: 1;
 }
 .nav-item {
-  padding: 15px 0; /* Spacing around nav items */
+  padding: 15px 0;
   text-align: center;
   cursor: pointer;
-  color: #aaa; /* Placeholder icon color */
-  font-size: 12px; /* Placeholder text size */
+  color: #aaa;
+  font-size: 12px;
 }
 .nav-item.active {
-  /* Indicate active state - simple version */
   background-color: #eef;
   color: #003870; /* Example active color */
-  /* In real app, use border-left or other indicators */
 }
 .nav-item:hover {
    background-color: #f5f5f5; /* Hover effect */
@@ -374,8 +364,6 @@ export default {
    color: #002a52;
  }
 
-
-/* --- Pagination Placeholder Styling --- */
 .pagination-controls {
   margin-top: 20px;
   text-align: right;

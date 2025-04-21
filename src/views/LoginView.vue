@@ -18,33 +18,24 @@
 </template>
 
 <script>
-// Step 2: Add Basic Interactivity
 export default {
   name: 'LoginView',
   methods: {
-    // Step 2: Method for SSO Login button click
-    handleSsoLogin() {
-      // In a real application, this is where you would trigger the
-      // Single Sign-On flow, which often involves redirecting the user
-      // to an external Identity Provider (like Azure AD, Okta, etc.)
-      // This usually requires backend coordination or specific frontend libraries.
 
-      // For now, we'll just simulate the action.
+    handleSsoLogin() {
+
       console.log('Attempting SSO Login - Redirecting (simulation)...');
       alert('SSO Login flow initiated (simulation). Check console.');
 
-      // Example (conceptual - do not use directly without SSO setup):
-      // window.location.href = 'YOUR_SSO_PROVIDER_LOGIN_URL';
-      this.$router.push('/outsource'); // Add this line
+
+      this.$router.push('/outsource');
     }
   }
 };
 </script>
 
 <style scoped>
-/* Step 3: Styling - Adapt styles from previous screens */
 
-/* Container - adjust padding/margins if needed */
 .login-container {
   display: flex;
   flex-direction: column;
@@ -52,15 +43,14 @@ export default {
   padding: 60px 20px;
   width: 100%;
   box-sizing: border-box;
-  text-align: center; /* Center text elements like subtitle */
+  text-align: center;
 }
 
-/* Logo, Title, Footer - Should match previous screens */
+
 .logo { max-width: 150px; margin-bottom: 40px; }
 .title { color: #333; font-size: 24px; font-weight: 600; margin-bottom: 15px; /* Less space below title */ }
 .footer-text { margin-top: 60px; font-size: 12px; color: #888; }
 
-/* Subtitle styling */
 .subtitle {
   color: #555; /* Slightly lighter than title */
   font-size: 16px;
@@ -69,7 +59,6 @@ export default {
   margin-bottom: 30px; /* Space below subtitle */
 }
 
-/* Base button styling - Reuse from PasswordSuccess */
 .button {
   padding: 12px 20px;
   border-radius: 8px;
@@ -81,7 +70,6 @@ export default {
   text-align: center;
 }
 
-/* Primary Button Styling - Reuse from PasswordSuccess */
 .btn-primary {
   background-color: #003870;
   color: white;
@@ -93,12 +81,10 @@ export default {
   border-color: #002a52;
 }
 
-/* Specific styling/sizing for the SSO button */
+
 .sso-button {
-  min-width: 250px; /* Give the button a decent minimum width */
-  /* Or use max-width similar to form inputs if preferred */
-  /* max-width: 320px; */
-  /* width: 100%; */ /* Uncomment if using max-width */
+  min-width: 250px;
+
 }
 
 </style>

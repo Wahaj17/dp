@@ -55,7 +55,7 @@ const notifications = ref([
   { id: 'n3', time: '30 minutes ago', details: 'You received a Purchase Order Document from Recruitment Support. <a href="#">View</a>' },
 ]);
 
-// Methods for mark as read, tab switching etc. would go here later
+// Bro add methods for mark as read, tab switching
 </script>
 
 <style scoped>
@@ -63,11 +63,11 @@ const notifications = ref([
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  width: 400px; /* Adjust width as needed */
-  max-height: 80vh; /* Limit height */
+  width: 400px;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Clip content */
+  overflow: hidden;
   border: 1px solid #eee;
 }
 
@@ -86,7 +86,7 @@ const notifications = ref([
 .mark-read-btn {
   background: none;
   border: none;
-  color: #003870; /* Primary blue */
+  color: #003870;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -135,7 +135,7 @@ const notifications = ref([
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-y: auto; /* Allow scrolling */
+  overflow-y: auto;
   flex-grow: 1;
 }
 
@@ -169,7 +169,6 @@ const notifications = ref([
 .item-title { margin: 0 0 2px 0; font-weight: 500; font-size: 14px; color: #333; }
 .item-meta { margin: 0; font-size: 12px; color: #777; }
 .item-details { margin: 5px 0 0 0; font-size: 14px; color: #444; line-height: 1.4;}
-/* Style links inside details - requires deep selector or global styles */
 .item-details :deep(a) { color: #003870; text-decoration: none; font-weight: 500;}
 .item-details :deep(a:hover) { text-decoration: underline;}
 
@@ -192,7 +191,7 @@ const notifications = ref([
 .item-dot {
     width: 8px;
     height: 8px;
-    background-color: #003870; /* Unread indicator color */
+    background-color: #003870;
     border-radius: 50%;
     flex-shrink: 0;
 }
